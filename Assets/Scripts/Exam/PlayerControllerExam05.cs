@@ -42,6 +42,7 @@ public class PlayerControllerExam05 : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
 
+
         if (shootAction.triggered && currentBulletCount > 0)
         {
             currentBulletCount--; 

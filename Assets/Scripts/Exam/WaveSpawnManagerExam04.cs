@@ -5,9 +5,9 @@ public class WaveSpawnManagerExam04 : MonoBehaviour
     public Wave[] waveConfigurations;
     public WaveController waveController;
 
-    public bool enableWaveCycling;
+    [SerializeField]public bool enableWaveCycling;
 
-    private int currentWave = 0;
+    [SerializeField] public int currentWave = 0;
     private float waveEndTime = 0f;
 
     void Start()
@@ -33,6 +33,21 @@ public class WaveSpawnManagerExam04 : MonoBehaviour
             {
                 waveController.StartWave(waveConfigurations[currentWave]);
                 waveEndTime = Time.time + waveConfigurations[currentWave].waveInterval;
+            }
+        }
+
+        if (currentWave >= waveConfigurations.Length)
+        {
+            if (enableWaveCycling)
+            {
+                currentWave = 0;
+                waveController.StartWave(waveConfigurations[currentWave]);
+                waveEndTime = Time.time + waveConfigurations[currentWave].waveInterval;
+            }
+            else
+            {
+                Debug.Log("All waves completed!");
+                return;
             }
         }
     }

@@ -521,20 +521,20 @@ MonoBehaviour:
   - enemyPrefabs:
     - {fileID: 7591800460858037780, guid: 26fb4a3794983844781ecb674ca3474a, type: 3}
     enemyCount: 10
-    spawnInterval: 1
+    spawnInterval: 0.1
     waveInterval: 12
   - enemyPrefabs:
     - {fileID: 7591800460858037780, guid: 26fb4a3794983844781ecb674ca3474a, type: 3}
     - {fileID: 1928853565600797406, guid: b363fb019a12f764bb4223e7aeda6e6a, type: 3}
     enemyCount: 10
-    spawnInterval: 1
+    spawnInterval: 0.1
     waveInterval: 12
   - enemyPrefabs:
     - {fileID: 7591800460858037780, guid: 26fb4a3794983844781ecb674ca3474a, type: 3}
     - {fileID: 1928853565600797406, guid: b363fb019a12f764bb4223e7aeda6e6a, type: 3}
     - {fileID: 4856339743466158455, guid: ef7037a830d2bff408a015608b81e6e5, type: 3}
     enemyCount: 20
-    spawnInterval: 1
+    spawnInterval: 0.1
     waveInterval: 22
   waveController: {fileID: 1888470326}
 --- !u!4 &535644974
@@ -601,7 +601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &830217480
 BoxCollider:
   m_ObjectHideFlags: 0
