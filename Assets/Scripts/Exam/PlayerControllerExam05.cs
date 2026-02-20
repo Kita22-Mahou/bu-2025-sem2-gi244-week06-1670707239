@@ -10,7 +10,10 @@ public class PlayerControllerExam05 : MonoBehaviour
 
     // Exam 05 ...
     public int maxBulletCount = 10;
-    public float bulletRegenerateCooldown = 1f;
+    public int currentBulletCount;
+    public float coolDownTime = 0f;
+    public float bulletRegenerateCooldown = 4f;
+    
     // ...
 
     private float horizontalInput;
@@ -21,6 +24,7 @@ public class PlayerControllerExam05 : MonoBehaviour
     {
         moveAction = InputSystem.actions.FindAction("Move");
         shootAction = InputSystem.actions.FindAction("Shoot");
+        currentBulletCount = maxBulletCount;
     }
 
     // Update is called once per frame
@@ -38,9 +42,22 @@ public class PlayerControllerExam05 : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
 
-        if (shootAction.triggered)
+        if (shootAction.triggered && currentBulletCount > 0)
         {
+            currentBulletCount--; 
             Instantiate(projectilePrefab, transform.position, transform.rotation);
         }
+
+        if (currentBulletCount <= 0)
+        {
+            coolDownTime += Time.deltaTime;
+        }
+
+        if (coolDownTime >= bulletRegenerateCooldown)
+        {
+            currentBulletCount = maxBulletCount;
+            coolDownTime = 0;
+        }
+
     }
 }

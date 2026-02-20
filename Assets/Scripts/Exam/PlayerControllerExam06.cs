@@ -16,6 +16,7 @@ public class PlayerControllerExam06 : MonoBehaviour
     private float verticalInput;
     private InputAction moveAction;
 
+
     private void Awake()
     {
         moveAction = InputSystem.actions.FindAction("Move");

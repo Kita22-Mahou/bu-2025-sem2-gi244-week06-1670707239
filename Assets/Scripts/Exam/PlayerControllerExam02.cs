@@ -23,8 +23,7 @@ public class PlayerControllerExam02 : MonoBehaviour
         verticalInput = moveAction.ReadValue<Vector2>().y;
         transform.Translate(-verticalInput * speed * Time.deltaTime * Vector3.right);
 
-        //verticalInput = moveAction.ReadValue<Vector2>().x;
-        //transform.Translate(verticalInput * speed * Time.deltaTime * Vector3.right);
+
 
         if (shootAction.triggered)
         {

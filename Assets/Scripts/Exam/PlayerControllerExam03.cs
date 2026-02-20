@@ -41,6 +41,8 @@ public class PlayerControllerExam03 : MonoBehaviour
         {
             Instantiate(projectilePrefab, transform.position, transform.rotation);
         }
+
+        
         
         if(enableAutoFireMode == true && Time.time >= autoFireInterval)
         {
