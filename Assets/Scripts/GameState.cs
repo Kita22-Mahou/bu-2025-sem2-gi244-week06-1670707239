@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    private int hitCount = 0;
+    public int hitCount = 0;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Animal"))
         {
             hitCount++;
-            if (hitCount >= 5)
+            if (hitCount >= 50000)
             {
                 Debug.Log("Game Over!");
                 Time.timeScale = 0;
